@@ -2,3 +2,5 @@
 node_modules/
 work/
 outputs/
+__pycache__/
+.env

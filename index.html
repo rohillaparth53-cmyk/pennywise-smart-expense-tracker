@@ -3,55 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Pennywise is a simple personal expense tracker with budgets and spending insights."
-    />
-    <title>Pennywise | Spend smarter</title>
+    <meta name="description" content="PennyWise AI - Futuristic Personal Finance Intelligence Platform with AI copilot, future wallet forecasting, and gamified savings." />
+    <title>PennyWise AI | Financial Intelligence Platform</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="app-shell">
       <aside class="sidebar" id="sidebar">
-        <a class="brand" href="#dashboard" aria-label="Pennywise home">
-          <span class="brand-mark">₹</span>
-          <span>Pennywise</span>
-        </a>
-
-        <p class="sidebar-label">MENU</p>
+        <a class="brand" href="#dashboard" aria-label="PennyWise AI home"><span class="brand-mark">₹</span><span>PennyWise <i>AI</i></span></a>
+        
+        <p class="sidebar-label">MONEY OS</p>
         <nav class="nav-links" aria-label="Main navigation">
-          <button class="nav-link active" data-view-target="dashboard" type="button">
-            <span>⌂</span> Overview
-          </button>
-          <button class="nav-link" data-view-target="transactions" type="button">
-            <span>↕</span> Transactions
-          </button>
-          <button class="nav-link" data-view-target="budgets" type="button">
-            <span>◎</span> Budgets
-          </button>
-          <button class="nav-link" data-view-target="insights" type="button">
-            <span>✦</span> Insights
-          </button>
+          <button class="nav-link active" data-view-target="dashboard" type="button"><span>₹</span> Command center</button>
+          <button class="nav-link ai-nav" data-view-target="assistant" type="button"><span>✦</span> Ask PennyWise AI</button>
+          <button class="nav-link" data-view-target="wallet" type="button"><span>⌁₹</span> Future wallet</button>
+          <button class="nav-link" data-view-target="autopsy" type="button"><span>◌₹</span> Spending autopsy</button>
+          <button class="nav-link" data-view-target="battles" type="button"><span>⚔🪙</span> Boss battles</button>
         </nav>
 
-        <div class="sidebar-tip">
-          <span class="tip-icon">✦</span>
-          <strong>Small steps, big savings.</strong>
-          <p>Track a little today to understand a lot tomorrow.</p>
+        <p class="sidebar-label space-top">MANAGE</p>
+        <nav class="nav-links" aria-label="Management navigation">
+          <button class="nav-link" data-view-target="transactions" type="button"><span>↕₹</span> Transactions</button>
+          <button class="nav-link" data-view-target="budgets" type="button"><span>◎₹</span> Budget guardian</button>
+          <button class="nav-link" data-view-target="splits" type="button"><span>÷₹</span> Split expenses</button>
+        </nav>
+
+        <div class="sidebar-preset-box">
+          <span>Demo Scenarios</span>
+          <div class="preset-pills">
+            <button class="preset-pill" data-preset="standard" type="button">👤 Standard (Balanced)</button>
+            <button class="preset-pill" data-preset="heavy-spender" type="button">⚡ High Burn (Surges)</button>
+            <button class="preset-pill" data-preset="fresh" type="button">✨ Fresh Slate (Empty)</button>
+          </div>
+        </div>
+
+        <div class="privacy-card">
+          <span class="privacy-icon">⌁</span>
+          <strong>Private by default</strong>
+          <p>Your transactions and financial intelligence stay secure in your browser.</p>
         </div>
 
         <div class="profile">
-          <div class="avatar">Y</div>
+          <div class="avatar">P</div>
           <div>
-            <strong>Your space</strong>
-            <span>Personal finance</span>
+            <strong>Financial Sentinel</strong>
+            <span>Active &amp; Private</span>
           </div>
+          <i class="status-dot"></i>
         </div>
       </aside>
 
@@ -59,38 +60,71 @@
         <header class="topbar">
           <button class="mobile-menu" id="mobile-menu" aria-label="Open navigation" type="button">☰</button>
           <div>
-            <p class="eyebrow" id="page-date">YOUR FINANCIAL SNAPSHOT</p>
-            <h1 id="page-title">Good to see you!</h1>
+            <p class="eyebrow" id="page-date">FINANCIAL COMMAND CENTER</p>
+            <h1 id="page-title">Your money, decoded.</h1>
           </div>
           <div class="topbar-actions">
-            <button class="icon-button" id="reset-data" title="Reset demo data" aria-label="Reset demo data" type="button">↺</button>
-            <button class="primary-button" id="open-transaction-modal" type="button">
-              <span>＋</span> Add transaction
-            </button>
+            <span class="local-pill" id="ai-status-pill"><i></i> 💸 AI Copilot: Active</span>
+            <button class="icon-button" id="reset-data" title="Restore sample data" aria-label="Restore sample data" type="button">↺</button>
+            <button class="primary-button" id="open-transaction-modal" type="button"><span>＋₹</span> Add transaction</button>
           </div>
         </header>
 
+        <!-- View 1: Command Center -->
         <section class="view active-view" id="dashboard">
+          <section class="command-hero">
+            <div class="hero-copy">
+              <p class="eyebrow electric">PENNYWISE INTELLIGENCE</p>
+              <h2 id="hero-greeting">A clearer view of your money.</h2>
+              <p id="hero-summary">PennyWise is analyzing your recorded cash flow to surface your next smart move.</p>
+              <button class="ai-button" data-view-target="assistant" type="button"><span>✦</span> Ask PennyWise AI <b>→</b></button>
+            </div>
+            <div class="hero-orbit" aria-hidden="true">
+              <div class="orbit-ring ring-one"></div>
+              <div class="orbit-ring ring-two"></div>
+              <div class="orbit-core">₹</div>
+            </div>
+          </section>
+
           <div class="summary-grid">
-            <article class="metric-card balance-card">
-              <div class="metric-heading"><span>Available balance</span><span class="metric-icon soft-blue">₹</span></div>
-              <strong id="balance-value">₹0</strong>
-              <p id="balance-note">Add income and expenses to start.</p>
-            </article>
             <article class="metric-card">
-              <div class="metric-heading"><span>This month's spending</span><span class="metric-icon soft-rose">↘</span></div>
+              <div class="metric-heading">
+                <span>Available balance</span>
+                <span class="metric-icon mint">₹</span>
+              </div>
+              <strong id="balance-value">₹0</strong>
+              <p id="balance-note">Based on your recorded cash flow.</p>
+              <div class="sparkline-container" id="sparkline-balance"></div>
+            </article>
+
+            <article class="metric-card">
+              <div class="metric-heading">
+                <span>Income this month</span>
+                <span class="metric-icon beige">↗₹</span>
+              </div>
+              <strong id="income-value">₹0</strong>
+              <p id="income-note">Income recorded this month.</p>
+              <div class="sparkline-container" id="sparkline-income"></div>
+            </article>
+
+            <article class="metric-card">
+              <div class="metric-heading">
+                <span>Spent this month</span>
+                <span class="metric-icon terracotta">↘₹</span>
+              </div>
               <strong id="spent-value">₹0</strong>
               <p id="spent-note">No expenses this month yet.</p>
+              <div class="sparkline-container" id="sparkline-spent"></div>
             </article>
+
             <article class="metric-card">
-              <div class="metric-heading"><span>Monthly budget left</span><span class="metric-icon soft-gold">◴</span></div>
-              <strong id="budget-left-value">₹0</strong>
-              <p id="budget-left-note">Set budgets to see your progress.</p>
-            </article>
-            <article class="metric-card">
-              <div class="metric-heading"><span>Top category</span><span class="metric-icon soft-mint">✦</span></div>
-              <strong id="top-category-value">—</strong>
-              <p id="top-category-note">Your biggest monthly expense.</p>
+              <div class="metric-heading">
+                <span>Money runway</span>
+                <span class="metric-icon sage">⏳₹</span>
+              </div>
+              <strong id="runway-value">—</strong>
+              <p id="runway-note">Days until balance reaches zero at current burn.</p>
+              <div class="sparkline-container" id="sparkline-runway"></div>
             </article>
           </div>
 
@@ -98,117 +132,604 @@
             <section class="panel chart-panel">
               <div class="panel-header">
                 <div>
-                  <p class="eyebrow">THIS MONTH</p>
-                  <h2>Spending by category</h2>
+                  <p class="eyebrow">SPENDING SIGNAL</p>
+                  <h2>Where your money went</h2>
                 </div>
-                <span class="pill" id="chart-total">₹0 spent</span>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <div class="chart-type-toggle">
+                    <button class="chart-pill-btn active" id="btn-chart-doughnut" type="button">Donut</button>
+                    <button class="chart-pill-btn" id="btn-chart-pie" type="button">Pie</button>
+                  </div>
+                  <span class="local-pill" id="chart-total">₹0 this month</span>
+                </div>
               </div>
-              <div class="chart-wrap"><canvas id="spending-chart" aria-label="Doughnut chart of monthly spending by category"></canvas></div>
+              <div class="chart-wrap">
+                <canvas id="spending-chart" aria-label="Doughnut or pie chart of this month's spending"></canvas>
+                <div class="chart-center" id="spending-chart-center">
+                  <strong id="chart-center-value">₹0</strong>
+                  <span>spent</span>
+                </div>
+              </div>
               <div class="chart-legend" id="chart-legend"></div>
             </section>
 
-            <section class="panel goals-panel">
+            <section class="panel intelligence-panel">
               <div class="panel-header">
                 <div>
-                  <p class="eyebrow">BUDGET CHECK</p>
-                  <h2>Keep an eye on</h2>
+                  <p class="eyebrow electric">AI MONEY DETECTIVE</p>
+                  <h2>What deserves attention</h2>
                 </div>
-                <button class="text-button" data-view-target="budgets" type="button">Edit budgets</button>
+                <span class="ai-button" style="padding: 4px 10px; font-size: 11px;">✦ LIVE</span>
               </div>
-              <div class="budget-list" id="dashboard-budget-list"></div>
+              <div class="intelligence-brief" id="intelligence-brief"></div>
+              <div class="prompt-row">
+                <button class="prompt-chip" data-prompt="Where did most of my money go this month?" type="button">Where did it go?</button>
+                <button class="prompt-chip" data-prompt="Which category should I reduce?" type="button">What to reduce?</button>
+                <button class="prompt-chip" data-prompt="How much can I safely spend this weekend?" type="button">Weekend budget?</button>
+              </div>
+            </section>
+          </div>
+
+          <!-- Visual Analytics Grid: Cash Flow Bar & Burn Velocity Line Chart -->
+          <div class="dashboard-grid visual-charts-grid">
+            <section class="panel chart-panel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">CASH FLOW BALANCE</p>
+                  <h2>Income vs. Expenses vs. Net</h2>
+                </div>
+                <span class="local-pill" id="cashflow-net-tag">₹0 Net</span>
+              </div>
+              <div class="chart-wrap" style="height: 220px;">
+                <canvas id="cashflow-bar-chart" aria-label="Monthly Cash Flow Bar Chart"></canvas>
+              </div>
+              <div class="chart-legend" id="cashflow-legend">
+                <span class="legend-item"><i class="legend-dot" style="background:#86efac"></i> Income</span>
+                <span class="legend-item"><i class="legend-dot" style="background:#fda4af"></i> Expenses</span>
+                <span class="legend-item"><i class="legend-dot" style="background:#c4b5fd"></i> Net Surplus</span>
+              </div>
+            </section>
+
+            <section class="panel chart-panel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">VELOCITY TRACKER</p>
+                  <h2>Daily Spending Trajectory</h2>
+                </div>
+                <span class="local-pill" id="velocity-rate-tag">₹0/day</span>
+              </div>
+              <div class="chart-wrap" style="height: 220px;">
+                <canvas id="velocity-line-chart" aria-label="Daily Spending Velocity Line Graph"></canvas>
+              </div>
+              <div class="chart-legend" id="velocity-legend">
+                <span class="legend-item"><i class="legend-dot" style="background:#38bdf8"></i> Actual Burn</span>
+                <span class="legend-item"><i class="legend-dot" style="background:#fde047"></i> Planned Trajectory</span>
+              </div>
+            </section>
+          </div>
+
+          <div class="dashboard-grid secondary-grid">
+            <section class="panel guardian-panel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">BUDGET GUARDIAN</p>
+                  <h2>Active alerts &amp; pace risks</h2>
+                </div>
+                <button class="text-button" data-view-target="budgets" type="button">Manage budgets →</button>
+              </div>
+              <div class="guardian-list compact" id="dashboard-guardian-alerts"></div>
+            </section>
+
+            <section class="panel challenge-panel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">BOSS BATTLE</p>
+                  <h2 id="challenge-title">Build your savings shield</h2>
+                </div>
+                <span class="challenge-badge" id="challenge-badge">LVL 01</span>
+              </div>
+              <p class="challenge-description" id="challenge-description">Complete daily financial challenges to earn XP and level up your financial discipline.</p>
+              <div class="challenge-progress">
+                <div class="progress-track">
+                  <div class="progress-fill neon-fill" id="challenge-progress" style="width: 30%"></div>
+                </div>
+                <span id="challenge-progress-label">Challenge progress</span>
+              </div>
+              <button class="text-button" data-view-target="battles" type="button">Open boss battles arena →</button>
             </section>
           </div>
 
           <section class="panel recent-panel">
             <div class="panel-header">
               <div>
-                <p class="eyebrow">LATEST ACTIVITY</p>
-                <h2>Recent transactions</h2>
+                <p class="eyebrow">RECENT ACTIVITY</p>
+                <h2>Latest recorded transactions</h2>
               </div>
-              <button class="text-button" data-view-target="transactions" type="button">View all</button>
+              <button class="text-button" data-view-target="transactions" type="button">View all transactions →</button>
             </div>
             <div class="transaction-list" id="recent-transactions"></div>
           </section>
         </section>
 
+        <!-- View 2: PennyWise AI Assistant -->
+        <section class="view" id="assistant">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow electric">INTELLIGENT FINANCIAL COPILOT</p>
+              <h2>Ask PennyWise AI</h2>
+              <p>Ask about your real financial data. Every calculation is derived from your actual transactions, budgets, and cash flow patterns.</p>
+            </div>
+            <span class="local-pill large"><i></i> 100% Private &amp; Grounded Data</span>
+          </div>
+
+          <div class="ai-layout">
+            <section class="panel assistant-console">
+              <div class="console-top">
+                <div>
+                  <span class="assistant-avatar">✦</span>
+                  <strong>PennyWise AI</strong>
+                  <small id="chat-mode-tag">Deterministic Grounded Engine</small>
+                </div>
+                <button class="text-button" id="clear-chat" type="button">Clear chat</button>
+              </div>
+
+              <div class="chat-messages" id="chat-messages" aria-live="polite"></div>
+
+              <div class="suggested-prompts">
+                <p>Suggested queries</p>
+                <div>
+                  <button class="prompt-chip" data-prompt="Where did most of my money go this month?" type="button">Where did money go?</button>
+                  <button class="prompt-chip" data-prompt="Why am I spending more than last month?" type="button">Why spending more?</button>
+                  <button class="prompt-chip" data-prompt="How much can I safely spend this weekend?" type="button">Safe weekend spend?</button>
+                  <button class="prompt-chip" data-prompt="Can I afford something worth ₹3,000?" type="button">Can I afford ₹3,000?</button>
+                  <button class="prompt-chip" data-prompt="Which category should I reduce?" type="button">Which category to cut?</button>
+                  <button class="prompt-chip" data-prompt="Predict my expenses for the next 30 days." type="button">Forecast 30 days</button>
+                  <button class="prompt-chip" data-prompt="How much could I save if I reduce food spending by 20%?" type="button">Save 20% on food</button>
+                </div>
+              </div>
+
+              <form class="chat-form" id="chat-form">
+                <input id="chat-input" maxlength="240" placeholder="Ask about spending, runway, affordability, or forecasts…" autocomplete="off" required />
+                <button class="ai-send" type="submit" aria-label="Send question">↑</button>
+              </form>
+            </section>
+
+            <aside class="assistant-side">
+              <section class="panel data-scope">
+                <p class="eyebrow">ANALYSIS SCOPE</p>
+                <h3>What PennyWise can see</h3>
+                <div class="scope-list" id="ai-data-scope"></div>
+              </section>
+
+              <section class="panel privacy-note">
+                <span>⌁</span>
+                <h3>Hybrid Intelligence Architecture</h3>
+                <p>PennyWise uses client-side deterministic analytics with optional server-side LLM synthesis. No financial credentials, PINs, or bank accounts are ever requested or stored.</p>
+              </section>
+            </aside>
+          </div>
+        </section>
+
+        <!-- View 3: Future Wallet Simulator -->
+        <section class="view" id="wallet">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow electric">FORECASTING &amp; SCENARIO MODELING</p>
+              <h2>Future Wallet Simulator</h2>
+              <p>Explore projections using your recorded balance, daily burn rate, and current category velocities. All forecasts are labeled estimates.</p>
+            </div>
+            <span class="estimate-tag">Stochastic Simulation</span>
+          </div>
+
+          <div class="wallet-horizon-grid" id="wallet-horizons"></div>
+
+          <div class="wallet-grid">
+            <section class="panel simulator-panel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">TRY BEFORE YOU BUY</p>
+                  <h2>Simulate a purchase</h2>
+                </div>
+                <span class="estimate-tag">Instant Impact</span>
+              </div>
+              <label class="range-label" for="purchase-range">
+                Purchase amount: <strong id="purchase-value">₹3,000</strong>
+              </label>
+              <input class="range-input" id="purchase-range" type="range" min="0" max="30000" step="500" value="3000" />
+              <div class="simulator-result" id="purchase-result"></div>
+              <p class="assumption-copy">Assumes your current daily spending pace continues without unexpected windfalls. Discloses full impact on 30-day runway.</p>
+            </section>
+
+            <section class="panel scenario-panel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">PACE SHIFT</p>
+                  <h2>What if you spent less?</h2>
+                </div>
+                <span class="scenario-percent" id="reduction-value">20% reduction</span>
+              </div>
+              <label class="range-label" for="reduction-range">
+                Spending cut: <strong>Adjust slider</strong>
+              </label>
+              <input class="range-input" id="reduction-range" type="range" min="0" max="50" step="5" value="20" />
+              <div class="scenario-compare" id="scenario-compare"></div>
+              <div class="forecast-chart-wrap">
+                <canvas id="forecast-chart" aria-label="Balance trajectory forecast comparing normal and reduced spending"></canvas>
+              </div>
+            </section>
+          </div>
+
+          <section class="panel savings-target-panel">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">GOAL ROADMAP</p>
+                <h2>Savings Target Date Estimator</h2>
+                <p>Calculates estimated completion date based on your recorded net monthly surplus.</p>
+              </div>
+            </div>
+            <form id="savings-target-form">
+              <label class="form-field" style="flex: 1;">
+                Target amount (₹)
+                <input id="savings-target-input" type="number" min="1000" step="500" placeholder="e.g. 50000" value="50000" required />
+              </label>
+              <button class="primary-button" type="submit">Estimate completion date</button>
+            </form>
+            <div class="target-result" id="target-result"></div>
+          </section>
+
+          <p class="projection-disclaimer">Notice: Projections are estimates derived from historical and current recorded transactions. They do not constitute certified financial advice or guarantee future outcomes.</p>
+        </section>
+
+        <!-- View 4: Spending Autopsy -->
+        <section class="view" id="autopsy">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow electric">MONTHLY FINANCIAL PSYCHOANALYSIS</p>
+              <h2>Spending Autopsy</h2>
+              <p>“If your money could talk, what would it say?” — An honest, witty, and deeply revealing review of your monthly habits.</p>
+            </div>
+            <button class="secondary-button" id="download-autopsy" type="button">↓ Shareable Report Card</button>
+          </div>
+
+          <section class="autopsy-hero" id="autopsy-hero"></section>
+
+          <div class="autopsy-grid">
+            <section class="panel autopsy-panel">
+              <p class="eyebrow">LARGEST CAPITAL MOVES</p>
+              <h2>Biggest transactions</h2>
+              <div id="largest-transactions"></div>
+            </section>
+
+            <section class="panel autopsy-panel">
+              <p class="eyebrow">THE MICRO-DRAIN DETECTOR</p>
+              <h2>Frequent small purchases</h2>
+              <div id="small-purchases"></div>
+            </section>
+
+            <section class="panel autopsy-panel">
+              <p class="eyebrow">ONE HIGH-LEVERAGE ACTION</p>
+              <h2>Next month move</h2>
+              <div id="autopsy-action"></div>
+            </section>
+          </div>
+
+          <section class="panel savings-opportunity">
+            <span class="opportunity-icon">✦</span>
+            <div>
+              <p class="eyebrow electric">IDENTIFIED SAVINGS OPPORTUNITY</p>
+              <h2 id="savings-opportunity-title">—</h2>
+              <p id="savings-opportunity-copy">—</p>
+            </div>
+            <button class="primary-button" data-view-target="assistant" type="button">Ask AI How →</button>
+          </section>
+
+          <p class="privacy-copy">Privacy Safeguard: The exported spending report contains aggregated category figures and behavioral insights. Individual sensitive merchant names and raw timestamps are masked by default.</p>
+        </section>
+
+        <!-- View 5: Financial Boss Battles -->
+        <section class="view" id="battles">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow electric">GAMIFIED SAVINGS ARENA</p>
+              <h2>Financial Boss Battles</h2>
+              <p>Conquer daily challenges, defeat impulsive spending bosses, maintain savings streaks, and earn badges to level up your financial discipline.</p>
+            </div>
+          </div>
+
+          <section class="battles-hero">
+            <div class="battles-player-stats">
+              <div class="player-level-ring" id="battle-level-ring">01</div>
+              <div class="player-level-info">
+                <h2 id="battle-rank-title">Level 1: Penny Scout</h2>
+                <p id="battle-xp-display">75 / 200 XP to next tier</p>
+                <div class="progress-track" style="width: 200px; height: 6px; margin-top: 8px;">
+                  <div class="progress-fill neon-fill" id="battle-xp-bar" style="width: 37%"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="streak-card">
+              <span class="streak-flame">🔥</span>
+              <div>
+                <strong id="battle-streak-count">4 Days</strong>
+                <span>Under Budget Streak</span>
+              </div>
+            </div>
+          </section>
+
+          <div class="battles-grid">
+            <section class="panel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">ACTIVE QUESTS</p>
+                  <h2>Daily &amp; Weekly Challenges</h2>
+                </div>
+                <span class="local-pill">Real-time Tracking</span>
+              </div>
+              <div id="quests-container"></div>
+            </section>
+
+            <section class="panel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">TROPHY CABINET</p>
+                  <h2>Achievement Badges</h2>
+                </div>
+              </div>
+              <div class="badges-cabinet" id="badges-container"></div>
+            </section>
+          </div>
+        </section>
+
+        <!-- View 6: Transactions Management -->
         <section class="view" id="transactions">
           <div class="section-heading">
             <div>
-              <p class="eyebrow">YOUR MONEY TRAIL</p>
+              <p class="eyebrow">AUDITABLE CASH LEDGER</p>
               <h2>Transactions</h2>
-              <p>Every expense has a place. Search, filter, and stay in control.</p>
+              <p>Add, filter, or delete transaction records. All analytics and forecasts update dynamically.</p>
             </div>
             <button class="primary-button" id="open-transaction-modal-2" type="button">＋ Add transaction</button>
           </div>
+
           <section class="panel transaction-panel">
             <div class="filter-row">
-              <label class="search-box"><span>⌕</span><input id="transaction-search" type="search" placeholder="Search transactions" /></label>
-              <select id="category-filter" aria-label="Filter by category"><option value="all">All categories</option></select>
+              <label class="search-box">
+                <span>⌕</span>
+                <input id="transaction-search" type="search" placeholder="Search transactions by merchant, category, or notes..." />
+              </label>
+              <select id="category-filter" aria-label="Filter by category">
+                <option value="all">All categories</option>
+              </select>
               <select id="type-filter" aria-label="Filter by type">
-                <option value="all">Income & expenses</option>
+                <option value="all">Income &amp; expenses</option>
                 <option value="expense">Expenses only</option>
                 <option value="income">Income only</option>
               </select>
             </div>
+
             <div class="table-wrap">
               <table>
-                <thead><tr><th>Transaction</th><th>Category</th><th>Date</th><th>Amount</th><th></th></tr></thead>
+                <thead>
+                  <tr>
+                    <th>Transaction</th>
+                    <th>Category</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
                 <tbody id="transaction-table-body"></tbody>
               </table>
             </div>
-            <p class="empty-state hidden" id="no-transactions">No transaction matches these filters.</p>
+            <p class="empty-state hidden" id="no-transactions">No transactions match your current search or filter criteria.</p>
           </section>
         </section>
 
+        <!-- View 7: Smart Budget Guardian -->
         <section class="view" id="budgets">
           <div class="section-heading">
             <div>
-              <p class="eyebrow">SPEND WITH INTENTION</p>
-              <h2>Monthly budgets</h2>
-              <p>Create category limits. Pennywise will signal when you're getting close.</p>
+              <p class="eyebrow">PROACTIVE RISK MONITOR</p>
+              <h2>Smart Budget Guardian</h2>
+              <p>Set category ceilings. Guardian warns you before you run out of funds with pace projection alerts.</p>
             </div>
-            <button class="primary-button" id="save-budgets" type="button">Save changes</button>
+            <button class="primary-button" id="save-budgets" type="button">Save all budgets</button>
           </div>
+
+          <section class="panel guardian-settings">
+            <div>
+              <p class="eyebrow">ALERT THRESHOLDS</p>
+              <h2>Configurable warning milestones</h2>
+              <p>Set custom trigger percentages for notification alerts.</p>
+            </div>
+            <div class="threshold-inputs">
+              <label>First notice (%)<input id="threshold-one" type="number" min="1" max="90" value="50" /></label>
+              <label>Caution (%)<input id="threshold-two" type="number" min="2" max="95" value="75" /></label>
+              <label>Critical (%)<input id="threshold-three" type="number" min="3" max="100" value="90" /></label>
+              <button class="secondary-button" id="save-thresholds" type="button">Save thresholds</button>
+            </div>
+          </section>
+
+          <section class="panel chart-panel">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">BUDGET VS. ACTUAL</p>
+                <h2>Category Limits vs. Recorded Spend</h2>
+              </div>
+              <span class="local-pill">Visual Pace Monitor</span>
+            </div>
+            <div class="chart-wrap" style="height: 250px;">
+              <canvas id="budget-bars-chart" aria-label="Category Budget vs Actual Spent Comparison"></canvas>
+            </div>
+            <div class="chart-legend" id="budget-bars-legend">
+              <span class="legend-item"><i class="legend-dot" style="background:#86efac"></i> Budget Limit</span>
+              <span class="legend-item"><i class="legend-dot" style="background:#fda4af"></i> Actual Spent</span>
+            </div>
+          </section>
+
+          <section class="guardian-alert-board" id="guardian-alerts"></section>
           <section class="budget-cards" id="budget-editor"></section>
         </section>
 
-        <section class="view" id="insights">
+        <!-- View 8: Split Expenses -->
+        <section class="view" id="splits">
           <div class="section-heading">
             <div>
-              <p class="eyebrow">YOUR SPENDING STORY</p>
-              <h2>Insights</h2>
-              <p>Small observations can lead to smarter habits.</p>
+              <p class="eyebrow">FRICTIONLESS GROUP SETTLEMENTS</p>
+              <h2>Split Expenses</h2>
+              <p>Add friends, record shared bills, and instantly view who owes or is owed money.</p>
             </div>
           </div>
-          <section class="insight-grid" id="insight-grid"></section>
+
+          <div class="split-summary" id="split-summary"></div>
+
+          <div class="split-grid">
+            <section class="panel split-form-panel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">RECORD SHARED EXPENSE</p>
+                  <h2>Who paid for what?</h2>
+                </div>
+              </div>
+              <form id="split-form">
+                <label class="form-field">
+                  Expense description
+                  <input name="split-name" maxlength="40" placeholder="e.g. Weekend dinner, Airbnb, Grocery run" required />
+                </label>
+                <div class="two-column">
+                  <label class="form-field">
+                    Total bill amount (₹)
+                    <input name="split-amount" type="number" min="1" step="1" placeholder="0" required />
+                  </label>
+                  <label class="form-field">
+                    Paid by
+                    <select id="split-paid-by" name="split-paid-by" required></select>
+                  </label>
+                </div>
+                <fieldset class="participant-fieldset">
+                  <legend>Split equally among participants</legend>
+                  <div class="participant-options" id="split-participants"></div>
+                </fieldset>
+                <button class="primary-button submit-button" type="submit">Create equal split</button>
+              </form>
+            </section>
+
+            <section class="panel people-panel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">YOUR CIRCLE</p>
+                  <h2>People in your group</h2>
+                </div>
+              </div>
+              <form class="add-person-form" id="add-person-form">
+                <input id="person-name" maxlength="24" placeholder="Add a friend's name" required />
+                <button class="secondary-button" type="submit">Add person</button>
+              </form>
+              <div class="people-list" id="split-people-list"></div>
+              <p class="helper-text">Select at least one other friend to share costs equally.</p>
+            </section>
+          </div>
+
+          <div class="split-grid split-bottom-grid">
+            <section class="panel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">NET BALANCES</p>
+                  <h2>Who owes what?</h2>
+                </div>
+              </div>
+              <div class="split-balances" id="split-balances"></div>
+            </section>
+
+            <section class="panel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">HISTORY</p>
+                  <h2>Recent shared splits</h2>
+                </div>
+              </div>
+              <div class="split-history" id="split-history"></div>
+            </section>
+          </div>
         </section>
       </main>
     </div>
 
+    <!-- Modal: Add Transaction -->
     <div class="modal-backdrop hidden" id="modal-backdrop"></div>
     <section class="modal hidden" id="transaction-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <div class="modal-header">
-        <div><p class="eyebrow">NEW ENTRY</p><h2 id="modal-title">Add a transaction</h2></div>
-        <button class="close-button" id="close-transaction-modal" aria-label="Close" type="button">×</button>
+        <div>
+          <p class="eyebrow">NEW RECORD</p>
+          <h2 id="modal-title">Add transaction</h2>
+        </div>
+        <button class="close-button" id="close-transaction-modal" aria-label="Close dialog" type="button">×</button>
       </div>
+
       <form id="transaction-form">
         <div class="type-switch" aria-label="Transaction type">
-          <label><input type="radio" name="type" value="expense" checked /><span>Expense</span></label>
-          <label><input type="radio" name="type" value="income" /><span>Income</span></label>
+          <label>
+            <input type="radio" name="type" value="expense" checked />
+            <span>Expense</span>
+          </label>
+          <label>
+            <input type="radio" name="type" value="income" />
+            <span>Income</span>
+          </label>
         </div>
-        <label class="form-field">What was it?<input id="transaction-name" name="name" maxlength="40" placeholder="e.g. Swiggy order" required /></label>
+
+        <label class="form-field">
+          Transaction description
+          <input id="transaction-name" name="name" maxlength="40" placeholder="e.g. Swiggy, Netflix, Salary, Petrol" required />
+        </label>
+
         <div class="two-column">
-          <label class="form-field">Amount<input id="transaction-amount" name="amount" type="number" min="1" step="1" placeholder="0" required /></label>
-          <label class="form-field">Date<input id="transaction-date" name="date" type="date" required /></label>
+          <label class="form-field">
+            Amount (₹)
+            <input id="transaction-amount" name="amount" type="number" min="1" step="1" placeholder="0" required />
+          </label>
+          <label class="form-field">
+            Date
+            <input id="transaction-date" name="date" type="date" required />
+          </label>
         </div>
-        <label class="form-field">Category<select id="transaction-category" name="category" required></select></label>
+
+        <label class="form-field">
+          Category
+          <select id="transaction-category" name="category" required></select>
+        </label>
         <p class="suggestion" id="category-suggestion"></p>
-        <label class="form-field">Note <span>(optional)</span><input name="note" maxlength="80" placeholder="Anything to remember?" /></label>
+
+        <label class="form-field">
+          Note <span>(optional)</span>
+          <input name="note" maxlength="80" placeholder="Any details to remember?" />
+        </label>
+
         <button class="primary-button submit-button" type="submit">Save transaction</button>
       </form>
     </section>
 
+    <!-- Modal: Shareable Autopsy Card -->
+    <section class="modal hidden" id="autopsy-modal" role="dialog" aria-modal="true" aria-labelledby="autopsy-modal-title">
+      <div class="modal-header">
+        <div>
+          <p class="eyebrow electric">SHAREABLE PRIVACY REPORT</p>
+          <h2 id="autopsy-modal-title">Spending Autopsy Card</h2>
+        </div>
+        <button class="close-button" id="close-autopsy-modal" aria-label="Close dialog" type="button">×</button>
+      </div>
+      <div id="autopsy-share-content"></div>
+      <div class="share-card-actions">
+        <button class="primary-button" id="copy-autopsy-btn" type="button">Copy summary</button>
+        <button class="secondary-button" id="print-autopsy-btn" type="button">Print / Save PDF</button>
+      </div>
+    </section>
+
+    <!-- Toast Notification -->
     <div class="toast hidden" id="toast" role="status"></div>
+    <canvas id="confetti-canvas"></canvas>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
     <script src="app.js"></script>
   </body>
